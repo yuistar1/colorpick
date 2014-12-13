@@ -1,0 +1,107 @@
+<!-- @ HTML5 COLORPICKER
+     @ author Agustín Baraza (contacto@nosolocss.com)
+     @ Copyright 2014 nosolocss.com. All rights reserved
+     @ http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+     @ link http://www.nosolocss.com -->
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>HTML5 COLORPICKER</title>
+<link href='http://fonts.googleapis.com/css?family=Black+Ops+One' rel='stylesheet' type='text/css'>
+<style type="text/css">
+
+body{font-family: "Arial", Helvetica, sans-serif;color:#fff;}
+a{text-decoration:none;font-family: 'Black Ops One', cursive;font-size:20px;color:#222;font-size:25px;}
+a:hover{color:#DF7401;}
+.nsc{position:absolute;height:30px;bottom:2px;right:0;left:0;text-align:center;}
+
+
+.top{
+	
+	position:absolute;
+	height:40px;
+	top:0;
+	left:0;
+	right:0;
+	background-color:#333;
+	z-index:0;
+	border:2px inset #000;	
+	
+}
+.content{
+
+	position:absolute;
+	height:400px;
+	top:100px;
+	left:0;
+	right:0;
+	text-align:center;
+
+}
+h1{	
+	position:relative;
+	font-size:20px;
+	margin-top:-10px;
+}
+h2{
+
+	font-size:30px;
+	color:#333;
+
+}
+h3{
+
+	font-size:80px;
+	color:#eaeaea;
+
+
+}
+input[name="seleccioncolor"]{
+	position:relative;
+	float:right;
+	margin-top:-50px;
+	z-index:500;
+}
+
+
+
+</style>
+</head>
+<body>
+
+<div class="top">
+	 
+	 		
+	<h1 align="center"><p>HTML5 Colorpicker</p></h1>
+	<input type="color" name="seleccioncolor">
+
+</div>
+<div class="content">
+
+	<h2><p>Selecciona un color con el botón que hay en la esquina superior derecha.</p></h2>
+
+	<h3></h3>
+
+</div>
+<div class="nsc"><a href="http://www.nosolocss.com/blog/html5/usar-video-como-fondo-web-adaptativo-con-html5-y-javascript">Volver a NOSOLOCSS</a></div>
+<script>
+
+window.onload = function() {
+
+	document.querySelector('input[name="seleccioncolor"]').addEventListener('change',function(){
+	
+		document.querySelector('html').style.background= this.value;
+		document.querySelector('.content h2 p').innerHTML= 'Este es el color que has seleccionado: ';
+		document.querySelector('.content h3').innerHTML= this.value;
+	
+
+	});
+
+}
+
+
+</script>
+</body>
+</html>
